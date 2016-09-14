@@ -1,3 +1,4 @@
-console.log('Hello JavaScript');
+import './main.scss';
+import initApp from './init_app';
 
-console.log('A second trace');
+initApp();
