@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run lint && nyc --reporter=lcov npm test && npm run coverage",
-    "test": "ava --verbose --require babel-register",
+    "precommit": "npm run lint && nyc --reporter=lcov npm test",
+    "test": "ava --verbose --require babel-register --require './test/helpers/setup-browser-env.js'",
     "dev": "webpack-dev-server --progress",
     "build": "webpack --config ./webpack.production.config.js --progress",
     "clean": "rimraf './public/*.+(js|css|html)'",
@@ -31,6 +31,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.22.0",
     "husky": "^0.11.6",
+    "jsdom": "^9.5.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.8.0",
     "nyc": "^8.1.0",
