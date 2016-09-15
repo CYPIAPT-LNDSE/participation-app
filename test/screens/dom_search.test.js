@@ -1,5 +1,5 @@
 import test, { beforeEach } from 'ava';
-import { getCurrentScreenFromNode } from '../../app/screen_nav';
+import { getCurrentScreenFromNode } from '../../app/screens/dom_search';
 
 beforeEach(() => {
   document.body.innerHTML =
