@@ -1,5 +1,5 @@
 import test from 'ava';
-import { add, vector2Add, magnitude, vector2Theta, cartesian2ToPolar, polar2ToCartesian } from '../app/math_helpers.js'
+import { add, vector2Add, vector2Subtract, magnitude, vector2Theta, cartesian2ToPolar, polar2ToCartesian } from '../app/math_helpers.js'
 
 function threedpAcc(x) {
   if (typeof x === 'object') {
@@ -14,6 +14,10 @@ test('adds two numbers', t => {
 
 test('adds two 2d vectors', t => {
   t.deepEqual(vector2Add([1, 2], [2, 1]), [3, 3]);
+});
+
+test('subtracts one 2d vector from another', t => {
+  t.deepEqual(vector2Subtract([2, 2], [1, 1]), [1, 1]);
 });
 
 test('calculates the magnitude of a vector', t => {

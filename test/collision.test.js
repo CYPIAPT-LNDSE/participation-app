@@ -1,5 +1,5 @@
 import test from 'ava';
-import { detectCollision, findCollisionWithOtherCircles } from '../app/collision.js';
+import { detectCollision, findCollisionWithOtherCircles, detectBoundaryCollision } from '../app/collision.js';
 
 test('detects collision between two circles', t => {
   const circleOne = {
@@ -47,4 +47,19 @@ test('detects any collisions with array of circles', t => {
   t.falsy(findCollisionWithOtherCircles(circleOne, [circleThree, circleFour]));
   t.truthy(findCollisionWithOtherCircles(circleOne, [circleTwo, circleFour]))
 });
+
+test('detects circle boundary collision', t => {
+  const circleOne = {
+    position: [5, 5],
+    colour: '#9e9e9e',
+    radius: 10
+  }
+  const circleTwo = {
+    position: [20, 20],
+    colour: '#9e9e9e',
+    radius: 10
+  }
+  t.truthy(detectBoundaryCollision(circleOne.radius, circleOne.position, 10, 10));
+  t.falsy(detectBoundaryCollision(circleTwo.radius, circleTwo.position, 50, 50));
+})
 

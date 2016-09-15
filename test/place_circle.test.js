@@ -1,6 +1,6 @@
 
 import test from 'ava';
-import { nextPixel, checkCenterPosition, findLowestPositionForCircleCenter } from '../app/place_circle.js';
+import { nextPixel, positionNotAccessible, checkCenterPosition, findLowestPositionForCircleCenter } from '../app/place_circle.js';
 
 test('finds correct next pixel', t => {
 
@@ -67,7 +67,34 @@ test('returns lowest and leftmost position for center of circle', t => {
 
   t.deepEqual(findLowestPositionForCircleCenter(3, circles, xMax, 0, yMax), [15, 21]);
   t.deepEqual(findLowestPositionForCircleCenter(6, circles, xMax, 0, yMax), [15, 14]);
-
+  t.deepEqual(findLowestPositionForCircleCenter(50, circles, xMax, 0, yMax), null);
+ 
 });
 
+test('returns false if position is accessible and true if blocked by other circles', t => {
+  const circleOne = {
+    radius: 3,
+    colour: '#9e9e9e',
+    position: [3, 21]
+  };
+  const circleTwo = {
+    radius: 3,
+    colour: '#9e9e9e',
+    position: [9, 21]
+  };
+  const circleThree = {
+    radius: 3,
+    colour: '#9e9e9e',
+    position: [21, 21]
+  };
+  const circles = [
+    circleOne,
+    circleTwo,
+    circleThree
+  ];
+  const xMax = 24;
+  const yMax = 24;
+  t.falsy(positionNotAccessible(1, [5, 5], circles));
+  t.truthy(positionNotAccessible(3, [3, 19], circles));
 
+});
