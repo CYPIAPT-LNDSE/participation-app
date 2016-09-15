@@ -10,11 +10,17 @@
   </head>
   <body>
     <div id="app" style="display: none">
-      <div class="screen" id="screen-1">
+      <div class="screen" id="questions-screen">
+        <div id="display-activity">activity</div>
+        <button id="activity-score-down">-</button>
+        <button id="activity-score-up">+</button>
+        <div id="activity-score-view"></div>
+      </div>
+      <div class="screen" id="results-screen">
         <button
           style="position: absolute; top: 5px; left: 200px; z-index: 1000"
           class="nav-button"
-          data-next-screen="screen-2"
+          data-next-screen="circles-screen"
           data-animate-out="slideOutUp"
           data-animate-in="slideInUp">next</button>
         <div id='text' class='plain-text'></div>
@@ -32,40 +38,20 @@
             </ul>
         </div>
       </div>
-      <div class="screen stuff" id="screen-2">
+      <div class="screen" id="circles-screen">
         <canvas id="circles" style="height: 100%; width: 100%; background-color: #faebd7"></canvas>
-        <!-- <button
-          class="nav-button"
-          data-next-screen="screen-1"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
-        <button
-          class="nav-button"
-          data-next-screen="screen-3"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button> -->
-      </div>
-      <div class="screen stuff" id="screen-3">
-        Screen 3
-        <button
-          class="nav-button"
-          data-next-screen="screen-2"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
-        <button
-          class="nav-button"
-          data-next-screen="screen-4"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button>
-      </div>
-      <div class="screen stuff" id="screen-4">
-        <!-- Screen 4 -->
-        <button
-          class="nav-button"
-          data-next-screen="screen-3"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
       </div>
     </div>
   </body>
 </html>
+
+<!-- <button
+  class="nav-button"
+  data-next-screen="screen-1"
+  data-animate-out="slideOutDown"
+  data-animate-in="slideInDown">prev</button>
+<button
+  class="nav-button"
+  data-next-screen="screen-3"
+  data-animate-out="slideOutUp"
+  data-animate-in="slideInUp">next</button> -->

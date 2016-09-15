@@ -1,27 +1,21 @@
-import { enableNavLinks, addScreenStyles } from './screens';
+import { enableNavLinks, addScreenStyles, showFirstScreen } from './screens';
 import resultScreen from './result_screen';
 import circlesScreen from './circles';
-
-const showFirstScreen = () => {
-  document.getElementById('app').style.display = 'inherit';
-  document.getElementById('screen-1').style.display = 'inherit';
-  screenHooks['screen-1'].onLoad();
-};
+import questionsScreen from './questions_screen';
 
 // type ScreenHooks = { [key]: { onLoad: Function, onUnload: Function } }
 
 // screenHooks :: ScreenHooks
 const screenHooks = {
-  'screen-1': resultScreen,
-  'screen-2': circlesScreen
+  'questions-screen': questionsScreen,
+  'results-screen': resultScreen,
+  'circles-screen': circlesScreen
 };
 
 const initApp = () => {
   addScreenStyles();
-  showFirstScreen();
+  showFirstScreen(screenHooks, 'questions-screen');
   enableNavLinks(screenHooks);
-  // provisionScreens();
-  // resultScreen.onLoad();
 };
 
 export default initApp;
