@@ -26,11 +26,25 @@ function addCircle (circle) {
 
 function drawCircle () {
   circles.forEach((circle) => {
-    ctx.fillStyle = circle.colour;
     ctx.beginPath();
     ctx.arc(circle.position[0], circle.position[1], circle.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = circle.colour;
     ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#292f33';
     ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(circle.position[0] - circle.radius / 3.5, circle.position[1] - circle.radius / 3.5, circle.radius / 5, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    ctx.fillStyle = 'black';
+    var text = 'hello';
+    var font = `bold ${circle.radius}px`;
+    ctx.font = font;
+    var width = ctx.measureText(text).width;
+    var height = ctx.measureText('w').width;
+    ctx.fillText(text, circle.position[0] - (width / 2), circle.position[1] + (height / 2));
   });
 }
 
@@ -39,9 +53,9 @@ function randomRadius () {
 }
 
 let radius = randomRadius();
-addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#9e9e9e', radius));
+addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#63d1f4', radius));
 radius = randomRadius();
-addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#9e9e9e', radius));
+addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#63d1f4', radius));
 
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
