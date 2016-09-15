@@ -9,7 +9,13 @@
   </head>
   <body>
     <div id="app" style="display: none">
-      <div class="screen stuff" id="screen-1">
+      <div class="screen" id="screen-1">
+        <button
+          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
+          class="nav-button"
+          data-next-screen="screen-2"
+          data-animate-out="slideOutUp"
+          data-animate-in="slideInUp">next</button>
         <div id='text' class='plain-text'></div>
         <div id="arrow-right"></div>
         <div id="container">
@@ -24,11 +30,6 @@
               <li id="pane8">8</li>
             </ul>
         </div>
-        <!-- <button
-          class="nav-button"
-          data-next-screen="screen-2"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button> -->
       </div>
       <div class="screen stuff" id="screen-2">
         Screen 2

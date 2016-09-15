@@ -36,7 +36,7 @@ mc.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
 // listen to events...
 function addPan () {
-  mc.on('panup pandown panend tap press', function (ev) {
+  mc.on('panup pandown panend', function (ev) {
     if (ev.type === 'panup') {
       addClass(text, 'blurry-text');
       degree += 3;
@@ -68,8 +68,6 @@ function addPan () {
     }
   });
 }
-
-addPan();
 
 function momentum (direction, velocity) {
   if (velocity <= 3) {
@@ -110,7 +108,7 @@ text.addEventListener('click', function () {
     addPan();
   } else {
     addClass(text, 'enlarge-text');
-    mc.off('panup pandown panend tap press');
+    panOff();
   }
 }, false);
 
@@ -132,6 +130,25 @@ function removeClass (el, className) {
     el.className = el.className.replace(reg, ' ');
   }
 }
+
+function panOff () {
+  mc.off('panup pandown panend tap press');
+}
+
+function onLoad () {
+  console.log('--------> ON LOAD');
+  addPan();
+}
+
+function onUnload () {
+  console.log('--------> ON UNLOAD');
+  mc.off('panup pandown panend tap press');
+}
+
+export default {
+  onLoad,
+  onUnload
+};
 
 // text injection
 text.innerHTML = `
