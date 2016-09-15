@@ -1,4 +1,4 @@
-import { enableNavClicks, initScreenStyles } from './screen_nav';
+import { enableNavLinks, addScreenStyles } from './screens';
 
 const showFirstScreen = () => {
   document.getElementById('app').style.display = 'inherit';
@@ -6,9 +6,9 @@ const showFirstScreen = () => {
 };
 
 const initApp = () => {
-  initScreenStyles();
+  addScreenStyles();
   showFirstScreen();
-  enableNavClicks();
+  enableNavLinks();
 };
 
 export default initApp;
