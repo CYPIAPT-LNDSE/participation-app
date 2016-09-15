@@ -43,6 +43,10 @@ addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRi
 radius = randomRadius();
 addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#9e9e9e', radius));
 
+const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+
 function clear () {
   ctx.clearRect(0, 0, c.width, c.height);
 }
@@ -56,7 +60,7 @@ function render () {
 }
 
 function queue () {
-  window.requestAnimationFrame(run);
+  start = requestAnimationFrame(run);
 }
 
 function run () {
@@ -66,4 +70,7 @@ function run () {
   queue();
 }
 
-export { run };
+let start = () => { return requestAnimationFrame(run); };
+let stop = () => { cancelAnimationFrame(start); };
+
+export { start, stop };

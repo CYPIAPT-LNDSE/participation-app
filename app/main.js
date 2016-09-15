@@ -1,6 +1,6 @@
-import { run } from './circles.js';
+import { start } from './circles.js';
 
-run();
+start();
 
 console.log('Hello JavaScript');
 
