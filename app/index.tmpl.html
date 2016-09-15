@@ -4,16 +4,32 @@
     <meta charset="utf-8">
     <title>Participation App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/big-bottom-cartoon-normal" type="text/css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/simple-print" type="text/css"/>
   </head>
   <body>
     <div id="app" style="display: none">
-      <div class="screen stuff" id="screen-1">
-        Screen 1
+      <div class="screen" id="screen-1">
         <button
+          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
           class="nav-button"
           data-next-screen="screen-2"
           data-animate-out="slideOutUp"
           data-animate-in="slideInUp">next</button>
+        <div id='text' class='plain-text'></div>
+        <div id="arrow-right"></div>
+        <div id="container">
+            <ul id="number-select">
+              <li id="pane1">1</li>
+              <li id="pane2">2</li>
+              <li id="pane3">3</li>
+              <li id="pane4">4</li>
+              <li id="pane5">5</li>
+              <li id="pane6">6</li>
+              <li id="pane7">7</li>
+              <li id="pane8">8</li>
+            </ul>
+        </div>
       </div>
       <div class="screen stuff" id="screen-2">
         Screen 2
