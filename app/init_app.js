@@ -1,5 +1,6 @@
 import { enableNavLinks, addScreenStyles } from './screens';
 import resultScreen from './result_screen';
+import circlesScreen from './circles';
 
 const showFirstScreen = () => {
   document.getElementById('app').style.display = 'inherit';
@@ -11,7 +12,8 @@ const showFirstScreen = () => {
 
 // screenHooks :: ScreenHooks
 const screenHooks = {
-  'screen-1': resultScreen
+  'screen-1': resultScreen,
+  'screen-2': circlesScreen
 };
 
 const initApp = () => {

@@ -4,7 +4,7 @@ const easeOut = (screen, animOutType, screenHook) => {
   screen.style.animation = `${animOutType} 0.5s forwards`;
 
   const onAnimationEnd = () => {
-    if (screenHook) screenHook.onUnload();
+    if (screenHook) screenHook.onUnload(screen);
     screen.style.display = 'none';
     screen.removeEventListener('animationend', onAnimationEnd);
   };
@@ -20,7 +20,7 @@ const easeIn = (screen, animInType, screenHook) => {
   screen.style.animation = `slideIn 0.5s forwards`;
 
   const onAnimationEnd = () => {
-    if (screenHook) screenHook.onLoad();
+    if (screenHook) screenHook.onLoad(screen);
     screen.removeEventListener('animationend', onAnimationEnd);
   };
 
