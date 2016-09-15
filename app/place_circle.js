@@ -2,6 +2,11 @@
 import { findCollisionWithOtherCircles, detectBoundaryCollision } from './collision.js';
 import { vector2Add } from './math_helpers.js';
 
+function calculateRadius (score, screenDimensions) {
+  const pixels = screenDimensions.width * screenDimensions.height;
+  return Math.round(score * (Math.sqrt(pixels / 20) / 2) / 5);
+}
+
 function nextPixel ([x, y], xMax, yMin) {
   if (x !== xMax) {
     return [x + 1, y];
@@ -46,4 +51,4 @@ function findLowestPositionForCircleCenter (radius, circles, xMax, yMin, yMax) {
   return null;
 }
 
-export { nextPixel, positionNotAccessible, checkCenterPosition, findLowestPositionForCircleCenter };
+export { calculateRadius, nextPixel, positionNotAccessible, checkCenterPosition, findLowestPositionForCircleCenter };

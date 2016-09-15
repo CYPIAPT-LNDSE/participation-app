@@ -1,5 +1,5 @@
 
-import { findLowestPositionForCircleCenter } from './place_circle.js';
+import { calculateRadius, findLowestPositionForCircleCenter } from './place_circle.js';
 
 let c = document.getElementById('circles');
 let ctx = c.getContext('2d');
@@ -9,11 +9,12 @@ let yBorderBottom = window.innerHeight;
 
 let circles = [];
 
-function newCircle (position, colour, radius) {
+function newCircle (position, colour, radius, tag) {
   return {
     position,
     colour,
-    radius
+    radius,
+    tag
   };
 }
 
@@ -36,7 +37,7 @@ function drawCircle () {
     ctx.fill();
 
     ctx.fillStyle = 'black';
-    var text = 'hello';
+    var text = circle.tag;
     var font = `bold ${circle.radius}px`;
     ctx.font = font;
     var width = ctx.measureText(text).width;
@@ -45,14 +46,12 @@ function drawCircle () {
   });
 }
 
-function randomRadius () {
-  return Math.round(Math.random() * 100);
+function displayCircles (questions, screenDimensions) {
+  questions.map((question) => {
+    const radius = calculateRadius(question.score, screenDimensions);
+    addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), question.colour, radius, question.tag));
+  });
 }
-
-let radius = randomRadius();
-addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#63d1f4', radius));
-radius = randomRadius();
-addCircle(newCircle(findLowestPositionForCircleCenter(radius, circles, xBorderRight, 0, yBorderBottom), '#63d1f4', radius));
 
 const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
@@ -81,14 +80,14 @@ function run () {
   queue();
 }
 
-let start = () => { return requestAnimationFrame(run); };
+let start = () => requestAnimationFrame(run);
 let stop = () => { cancelAnimationFrame(start); };
 
 const onLoad = (containerNode) => {
-  console.log('££££££££££££££££££');
   c.width = window.innerWidth;
   c.height = window.innerHeight;
-  console.log(c.width, c.height, c);
+  const questions = JSON.parse(window.localStorage.getItem('activeData'));
+  displayCircles(questions, { width: c.width, height: c.height });
   start();
 };
 
