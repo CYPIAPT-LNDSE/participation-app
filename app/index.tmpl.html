@@ -15,26 +15,32 @@
 
       <!-- 1. HOMEPAGE SCREEN -->
       <div class="screen" id="homepage-screen">
-        <button
+        <div class="nextContainer">
+          <button
           class="nav-button nextButton"
           data-next-screen="questions-screen"
           data-animate-out="slideOutUp"
           data-animate-in="slideInUp">NEXT</button>
 
+          <div id='trapezoid'></div>
+          <div id='trapezoidBorder'></div>
+        </div>
         <p id='logo'>Partici</p>
         <p id='homepage-app'>App</p>
         <canvas id="homepage-canvas" width="578" height="200"></canvas>
-        <div id='trapezoid'></div>
-        <div id='trapezoidBorder'></div>
       </div>
 
       <!-- 2. QUESTIONS SCREEN -->
       <div class="screen" id="questions-screen">
+        <div class="nextContainer">
         <button
           class="nav-button nextButton"
           data-next-screen="circles-screen"
           data-animate-out="slideOutUp"
           data-animate-in="slideInUp">NEXT</button>
+          <div id='trapezoid'></div>
+          <div id='trapezoidBorder'></div>
+        </div>
         <p id='activity-score-up'>+</p>
         <p id='activity-score-down'>-</p>
         <div id='questionBox'>
@@ -43,19 +49,19 @@
         <img id="rightArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
         <img id="leftArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
         <canvas id="ballCanvas"></canvas>
-        <div id='trapezoid'></div>
-        <div id='trapezoidBorder'></div>
       </div>
 
       <!-- 3. CIRCLES SCREEN -->
       <div class="screen" id="circles-screen">
-        <button
-          class="nav-button nextButton"
-          data-next-screen="results-screen"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">NEXT</button>
+        <div class="nextContainer">
+          <button
+            class="nav-button nextButton"
+            data-next-screen="results-screen"
+            data-animate-out="slideOutUp"
+            data-animate-in="slideInUp">NEXT</button>
           <div id='trapezoid'></div>
           <div id='trapezoidBorder'></div>
+        </div>
         <canvas id="circles" style="height: 100%; width: 100%; background-color: #faebd7"></canvas>
       </div>
 
