@@ -10,7 +10,7 @@ test('calculate radius returns radii that are guarenteed to fit on the screen', 
     height: 2000,
     width: 100
   };
-  t.is(calculateRadius(5, screenDimensions), 50);
+  t.is(calculateRadius(5, screenDimensions), 67);
 });
 
 test('finds correct next pixel', t => {
