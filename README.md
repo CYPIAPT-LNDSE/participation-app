@@ -27,7 +27,7 @@ Users will be able to save and share their results if they want.
 - Desktop version
 
 ### Improvements
-- Optimise circle algorithm
+- Optimise circle algorithm - techincal
 - Results stability
 - Results logic
 - Dynamic Circles (collision and animations)
