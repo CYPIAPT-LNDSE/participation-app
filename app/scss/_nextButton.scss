@@ -1,0 +1,38 @@
+.nextButton {
+  position: absolute;
+  bottom: -1vh;
+  left: 35vw;
+  width: 30vw;
+  z-index: 1000;
+  font-family: 'BigBottomCartoonRegular';
+  font-size: 20px;
+  color: #00688B;
+  letter-spacing: 6px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+
+#trapezoid {
+	border-bottom: 10vw solid #8ED6FF;
+	border-left: 15vw solid transparent;
+	border-right: 15vw solid transparent;
+	height: 0;
+	width: 30vw;
+  z-index: 999;
+  position: absolute;
+  bottom: 0;
+  left: 20vw;
+}
+
+#trapezoidBorder {
+	border-bottom: 10.3vw solid #1e252f;
+	border-left: 15.2vw solid transparent;
+	border-right: 15.2vw solid transparent;
+	height: 0;
+	width: 31vw;
+  z-index: 998;
+  position: absolute;
+  bottom: 0;
+  left: 19.32vw;
+}
