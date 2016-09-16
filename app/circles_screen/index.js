@@ -1,21 +1,22 @@
 
 import { calculateRadius, findLowestPositionForCircleCenter } from './place_circle.js';
-/*
- import { inCircleArea } from './circle_canvas_interaction.js';
-*/
+
+import { clickedCircle } from './circle_canvas_interaction.js';
 
 let c = document.getElementById('circles');
 let ctx = c.getContext('2d');
 
 let xBorderRight = window.innerWidth;
-let yBorderBottom = window.innerHeight;
+let yBorderBottom = window.innerHeight * 0.9;
+let xOffset = c.offsetLeft;
+let yOffset = c.offsetTop;
 
-/*
 c.addEventListener('click', (event) => {
-  const x = event.pageX;
-  const y = event.pageY;
-  }, false);
-*/
+  const x = event.pageX - xOffset;
+  const y = event.pageY - yOffset;
+  const clickedQuestion = clickedCircle(x, y, circles);
+  console.log(clickedQuestion);
+}, false);
 
 let circles = [];
 
