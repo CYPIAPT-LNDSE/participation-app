@@ -36,3 +36,18 @@
   bottom: 0;
   left: 19.32vw;
 }
+
+@media screen and (max-width: 330px) {
+    #trapezoidBorder {
+      border-bottom: 10.5vw solid #1e252f;
+    	border-left: 15.2vw solid transparent;
+    	border-right: 15.2vw solid transparent;
+      width: 31.3vw;
+    }
+
+    .nextButton {
+      bottom: -2vh;
+      left: 33vw;
+      width: 30vw;
+    }
+}
