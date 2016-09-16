@@ -1,4 +1,5 @@
 import Hammer from 'hammerjs';
+import { LADDER } from './content';
 import { getRating } from './get_rating';
 
 const paneSize = 220;
@@ -99,6 +100,7 @@ function snapMove (direction) {
     setTimeout(function () { snapMove(direction); }, 30);
   } else {
     removeClass(text, 'blurry-text');
+    setContent(Math.floor(degree / 45));
     return degree;
   }
 }
@@ -136,9 +138,17 @@ function panOff () {
   mc.off('panup pandown panend tap press');
 }
 
+function setContent (rating) {
+  const [title, body] = LADDER[rating - 1];
+  text.innerHTML =
+    `<p id='title'>${title}</p>
+    <p id='text-body'>${body}</p>`;
+}
+
 function onLoad () {
   addPan();
   console.log('Your rating is: ', getRating());
+  setContent(getRating());
 }
 
 function onUnload () {
@@ -149,9 +159,3 @@ export default {
   onLoad,
   onUnload
 };
-
-// text injection
-text.innerHTML = `
-    <p id='title'>Level Four !</p>
-    <p id='text-body'>Red leicester hard cheese emmental. Cheese strings brie cream cheese st. agur blue cheese cottage cheese queso boursin bavarian bergkase. Cheese triangles smelly cheese fromage frais cheese on toast stinking bishop macaroni cheese babybel pecorino. Macaroni cheese emmental boursin cream cheese.</p>
-    `;
