@@ -85,10 +85,8 @@ let start = () => { return requestAnimationFrame(run); };
 let stop = () => { cancelAnimationFrame(start); };
 
 const onLoad = (containerNode) => {
-  console.log('££££££££££££££££££');
   c.width = window.innerWidth;
   c.height = window.innerHeight;
-  console.log(c.width, c.height, c);
   start();
 };
 

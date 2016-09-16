@@ -43,15 +43,12 @@ function animate (canvas) {
 var canvas = document.getElementById('homepage-canvas');
 
 const onLoad = () => {
-  console.log('loading homepage...');
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight * 1.5;
-  console.log(canvas);
   animate(canvas);
 };
 
 const onUnload = () => {
-  console.log('unloading homepage...');
 };
 
 export default {

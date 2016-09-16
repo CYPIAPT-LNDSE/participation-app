@@ -136,12 +136,10 @@ function panOff () {
 }
 
 function onLoad () {
-  console.log('--------> ON LOAD');
   addPan();
 }
 
 function onUnload () {
-  console.log('--------> ON UNLOAD');
   mc.off('panup pandown panend tap press');
 }
 

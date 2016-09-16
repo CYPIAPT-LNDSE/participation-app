@@ -6,7 +6,6 @@ const onLoad = () => {
 };
 
 const onUnload = () => {
-  console.log('Unloading questions screen');
 };
 
 export default {
