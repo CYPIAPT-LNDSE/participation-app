@@ -8,6 +8,10 @@ let degree = 0;
 let lastDirection = '';
 let maxV = 0;
 
+function startDegree () {
+  degree = 360 - ((getRating() - 1) * 45);
+}
+
 reset(degree);
 
 function reset (deg) {
@@ -100,7 +104,8 @@ function snapMove (direction) {
     setTimeout(function () { snapMove(direction); }, 30);
   } else {
     removeClass(text, 'blurry-text');
-    setContent(Math.floor(degree / 45));
+    degree = degree % 360;
+    setContent(Math.round((360 - degree) / 45) + 1);
     return degree;
   }
 }
@@ -139,6 +144,9 @@ function panOff () {
 }
 
 function setContent (rating) {
+  console.log(rating);
+  if (rating < 1) rating = 1;
+  if (rating > 8) rating = 1;
   const [title, body] = LADDER[rating - 1];
   text.innerHTML =
     `<p id='title'>${title}</p>
@@ -149,6 +157,9 @@ function onLoad () {
   addPan();
   console.log('Your rating is: ', getRating());
   setContent(getRating());
+  startDegree();
+  document.getElementById(`${'pane' + getRating()}`).style.backgroundColor = '#00688B';
+  reset(degree);
 }
 
 function onUnload () {
