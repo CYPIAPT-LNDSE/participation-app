@@ -6,8 +6,6 @@
 
 A mobile focused web application that allows a young person to evaluate their current participation in their care.
 
-## Why? 
-
 ## How?
 
 Users will be able to answer questions about their participation in an entertaining way using blobs to indicate the strength of a particular kind of involvement. Users will then be able to adjust these at the end before submitting their results.
