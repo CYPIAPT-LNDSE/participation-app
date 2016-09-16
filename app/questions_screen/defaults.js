@@ -4,18 +4,43 @@ export const DEFAULT_SCORE = 3;
 
 export const ACTIVITY_DATA = [
   {
-    description: 'Smelly french cheese',
+    description: '1. First Activity',
     colour: '#63D1F4',
-    tag: 'brie'
+    tag: 'activity 1'
   },
   {
-    description: 'Good old english',
+    description: '2. Second Activity',
     colour: '#ef5350',
-    tag: 'cheddar'
+    tag: 'activity 2'
   },
   {
-    description: 'Dutch courage?',
+    description: '3. Third Activity',
     colour: '#9575cd',
-    tag: 'emmental'
+    tag: 'activity 3'
+  },
+  {
+    description: '4. Fourth Activity',
+    colour: '#4db6ac',
+    tag: 'activity 4'
+  },
+  {
+    description: '5. Fifth Activity',
+    colour: '#81c784',
+    tag: 'activity 5'
+  },
+  {
+    description: '6. Sixth Activity',
+    colour: '#a1887f',
+    tag: 'activity 6'
+  },
+  {
+    description: '7. Seventh Activity',
+    colour: '#fff176',
+    tag: 'activity 7'
+  },
+  {
+    description: '8. Eighth Activity',
+    colour: '#ffb74d',
+    tag: 'activity 8'
   }
 ];
