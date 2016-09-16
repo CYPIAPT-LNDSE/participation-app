@@ -1,6 +1,6 @@
 import { enableUI, refreshUI } from './ui-controls';
 
-import clear from './canvas-controls.js';
+import { clear } from './canvas-controls.js';
 
 const onLoad = () => {
   enableUI();
