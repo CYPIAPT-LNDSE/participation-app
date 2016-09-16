@@ -16,11 +16,11 @@
       <!-- 1. HOMEPAGE SCREEN -->
       <div class="screen" id="homepage-screen">
         <div class="nextContainer">
-          <button
+          <div
           class="nav-button nextButton"
           data-next-screen="questions-screen"
           data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">NEXT</button>
+          data-animate-in="slideInUp">NEXT</div>
 
           <div id='trapezoid'></div>
           <div id='trapezoidBorder'></div>
@@ -33,11 +33,11 @@
       <!-- 2. QUESTIONS SCREEN -->
       <div class="screen" id="questions-screen">
         <div class="nextContainer">
-        <button
+        <div
           class="nav-button nextButton"
           data-next-screen="circles-screen"
           data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">NEXT</button>
+          data-animate-in="slideInUp">NEXT</div>
           <div id='trapezoid'></div>
           <div id='trapezoidBorder'></div>
         </div>
@@ -46,19 +46,27 @@
         <div id='questionBox'>
           <p id='display-activity'></p>
         </div>
-        <img id="rightArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
-        <img id="leftArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
+        <div id='arrows'>
+          <div id='rightArrow'>
+          <div class="circle"><p class='arrow'>></p></div>
+          <div class="circleBorder"></div>
+        </div>
+        <div id="leftArrow"
+          <div class="circleL"><p class='arrow'>&lt;</p></div>
+          <div class="circleBorderL"></div>
+        </div>
+      </div>
         <canvas id="ballCanvas"></canvas>
       </div>
 
       <!-- 3. CIRCLES SCREEN -->
       <div class="screen" id="circles-screen">
         <div class="nextContainer">
-          <button
+          <div
             class="nav-button nextButton"
             data-next-screen="results-screen"
             data-animate-out="slideOutUp"
-            data-animate-in="slideInUp">NEXT</button>
+            data-animate-in="slideInUp">NEXT</div>
           <div id='trapezoid'></div>
           <div id='trapezoidBorder'></div>
         </div>

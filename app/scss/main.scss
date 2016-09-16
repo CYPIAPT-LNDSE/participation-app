@@ -89,16 +89,6 @@ li {
     margin: 0;
 }
 
-#arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 5vh solid transparent;
-  border-bottom: 5vh solid transparent;
-  border-left: 5vh solid #00688B;
-  position: absolute;
-  top: 42vh;
-  left: 25vw;
-}
 
 
 
@@ -125,4 +115,67 @@ li {
 
 @keyframes slideIn {
   100% { top: 0; }
+}
+
+.circle {
+  position: absolute;
+  bottom: 2.2vh;
+  right: 1.5vh;
+	width: 18vw;
+	height: 18vw;
+	background: #63D1F4;
+	-moz-border-radius: 9vw;
+	-webkit-border-radius: 9vw;
+	border-radius: 9vw;
+  z-index: 200;
+}
+
+.arrow {
+  text-align: center;
+  font-family: 'BigBottomCartoonRegular';
+  font-size: 50px;
+  color: #1e252f;
+  margin: 0;
+  vertical-align: middle;
+  height: 50px;
+  line-height: 70%;
+}
+
+.circleBorder {
+  position: absolute;
+  bottom: (-0.075vh + 2);
+  right: 1.225vh;
+	width: 19vw;
+	height: 19vw;
+	background: #1e252f;
+	-moz-border-radius: 9.5vw;
+	-webkit-border-radius: 9.5vw;
+	border-radius: 9.5vw;
+  z-index: 100;
+}
+
+.circleBorderL {
+  position: absolute;
+  bottom: (-0.075vh + 2);
+  left: 1.225vh;
+	width: 19vw;
+	height: 19vw;
+	background: #1e252f;
+	-moz-border-radius: 9.5vw;
+	-webkit-border-radius: 9.5vw;
+	border-radius: 9.5vw;
+  z-index: 100;
+}
+
+.circleL {
+  position: absolute;
+  bottom: 2.2vh;
+  left: 1.5vh;
+	width: 18vw;
+	height: 18vw;
+	background: #63D1F4;
+	-moz-border-radius: 9vw;
+	-webkit-border-radius: 9vw;
+	border-radius: 9vw;
+  z-index: 200;
 }

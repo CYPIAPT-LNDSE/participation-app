@@ -28,27 +28,7 @@
     margin: 0;
 }
 
-#rightArrow {
-  width: 20vw;
-  height: 10vh;
-  position: absolute;
-  bottom: 0vh;
-  right: 2vw;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
-}
 
-#leftArrow {
-  width: 20vw;
-  height: 10vh;
-  position: absolute;
-  bottom: 0vh;
-  left: 2vw;
-}
 
 #activity-score-up {
   font-family: 'BigBottomCartoonRegular';
@@ -56,11 +36,13 @@
   font-size: 100px;
   position: absolute;
   right: 3vw;
-  top: 35vh;
+  top: 55vh;
   color: #63D1F4;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   z-index: 500;
+  line-height: 20vh;
+  margin: 0;
 }
 
 #activity-score-down {
@@ -69,11 +51,13 @@
   font-size: 100px;
   position: absolute;
   left: 3vw;
-  top: 37vh;
+  top: 57vh;
   color: #63D1F4;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   z-index: 500;
+  line-height: 20vh;
+  margin: 0;
 }
 
 #okay {

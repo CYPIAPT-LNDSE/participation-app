@@ -3,52 +3,52 @@ import { findCollisionWithOtherCircles, detectBoundaryCollision } from './collis
 import { vector2Add } from './math_helpers.js';
 
 function calculateRadius (score, screenDimensions) {
-  const pixels = screenDimensions.width * screenDimensions.height;
-  return Math.round(score * (Math.sqrt(pixels / 20) / 2) / 5);
+    const pixels = screenDimensions.width * screenDimensions.height;
+    return Math.round(score * (Math.sqrt(pixels / 11) / 2) / 5);
 }
 
 function nextPixel ([x, y], xMax, yMin) {
-  if (x !== xMax) {
-    return [x + 1, y];
-  }
-  if (y === yMin) {
-    return null;
-  }
-  return [1, y - 1];
+    if (x !== xMax) {
+        return [x + 1, y];
+    }
+    if (y === yMin) {
+        return null;
+    }
+    return [1, y - 1];
 }
 
 function positionNotAccessible (radius, position, circles) {
-  let testPos = [position[0], 0];
-  while (testPos[1] < position[1]) {
-    if (findCollisionWithOtherCircles({ radius, position: testPos }, circles)) {
-      return true;
+    let testPos = [position[0], 0];
+    while (testPos[1] < position[1]) {
+        if (findCollisionWithOtherCircles({ radius, position: testPos }, circles)) {
+            return true;
+        }
+        testPos = vector2Add(testPos, [0, 1]);
     }
-    testPos = vector2Add(testPos, [0, 1]);
-  }
-  return false;
+    return false;
 }
 
 function checkCenterPosition (radius, position, circles, xMax, yMin, yMax) {
-  if (findCollisionWithOtherCircles({ radius, position }, circles) || detectBoundaryCollision(radius, position, xMax, yMax) || positionNotAccessible(radius, position, circles)) {
-    return nextPixel(position, xMax, yMin);
-  }
-  return position;
+    if (findCollisionWithOtherCircles({ radius, position }, circles) || detectBoundaryCollision(radius, position, xMax, yMax) || positionNotAccessible(radius, position, circles)) {
+        return nextPixel(position, xMax, yMin);
+    }
+    return position;
 }
 
 function findLowestPositionForCircleCenter (radius, circles, xMax, yMin, yMax) {
-  let exit = false;
-  let position = [0, yMax];
-  while (exit === false) {
-    let newPosition = checkCenterPosition(radius, position, circles, xMax, yMin, yMax);
-    if (newPosition === position) {
-      return position;
+    let exit = false;
+    let position = [0, yMax];
+    while (exit === false) {
+        let newPosition = checkCenterPosition(radius, position, circles, xMax, yMin, yMax);
+        if (newPosition === position) {
+            return position;
+        }
+        if (newPosition === null) {
+            exit = true;
+        }
+        position = newPosition;
     }
-    if (newPosition === null) {
-      exit = true;
-    }
-    position = newPosition;
-  }
-  return null;
+    return null;
 }
 
 export { calculateRadius, nextPixel, positionNotAccessible, checkCenterPosition, findLowestPositionForCircleCenter };
