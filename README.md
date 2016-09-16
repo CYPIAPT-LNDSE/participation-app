@@ -25,6 +25,7 @@ Users will be able to save and share their results if they want.
 - Tips
 - Return to alter answers
 - Desktop version
+- Convert to native app
 
 ### Improvements
 - Optimise circle algorithm - techincal
@@ -32,6 +33,8 @@ Users will be able to save and share their results if they want.
 - Results logic
 - Dynamic Circles (collision and animations)
 - Question completion animation (ball drop off page)
+- Improve navigation
+- more gamification
 
 ### User Testing
 - UX (User Experience)
