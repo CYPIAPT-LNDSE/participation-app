@@ -15,3 +15,25 @@ Users will be able to answer questions about their participation in an entertain
 On submitting a user will see an interactive ladder with a score that corresponds to their particular level of participation. Users will be able to see information about the different levels and get tips on how to move to each of them if they want to.
 
 Users will be able to save and share their results if they want.
+
+## Full Sprint Proposal
+
+### Additional Features
+- Personalised output
+- Save
+- Share
+- Tips
+- Return to alter answers
+- Desktop version
+
+### Improvements
+- Optimise circle algorithm
+- Results stability
+- Results logic
+- Dynamic Circles (collision and animations)
+- Question completion animation (ball drop off page)
+
+### User Testing
+- UX (User Experience)
+- UI (User Interface) 
+
