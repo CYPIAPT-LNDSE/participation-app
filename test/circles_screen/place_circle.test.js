@@ -2,7 +2,16 @@ import test from 'ava';
 import { nextPixel,
          positionNotAccessible,
          checkCenterPosition,
+         calculateRadius,
          findLowestPositionForCircleCenter } from '../../app/circles_screen/place_circle';
+
+test('calculate radius returns radii that are guarenteed to fit on the screen', t => {
+  let screenDimensions = {
+    height: 2000,
+    width: 100
+  };
+  t.is(calculateRadius(5, screenDimensions), 50);
+});
 
 test('finds correct next pixel', t => {
   const xMax = 20;
