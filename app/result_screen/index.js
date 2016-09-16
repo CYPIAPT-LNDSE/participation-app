@@ -7,6 +7,10 @@ let degree = 0;
 let lastDirection = '';
 let maxV = 0;
 
+function startDegree () {
+  degree = 360 - ((getRating() - 1) * 45);
+}
+
 reset(degree);
 
 function reset (deg) {
@@ -138,7 +142,9 @@ function panOff () {
 
 function onLoad () {
   addPan();
-  console.log('Your rating is: ', getRating());
+  startDegree();
+  document.getElementById(`${'pane' + getRating()}`).style.backgroundColor = '#00688B';
+  reset(degree);
 }
 
 function onUnload () {
