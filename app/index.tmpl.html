@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Participation App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/big-bottom-cartoon-normal" type="text/css">
@@ -13,13 +15,16 @@
 
       <!-- 1. HOMEPAGE SCREEN -->
       <div class="screen" id="homepage-screen">
-        <button
-          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
-          class="nav-button"
+        <div class="nextContainer">
+          <button
+          class="nav-button nextButton"
           data-next-screen="questions-screen"
           data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button>
+          data-animate-in="slideInUp">NEXT</button>
 
+          <div id='trapezoid'></div>
+          <div id='trapezoidBorder'></div>
+        </div>
         <p id='logo'>Partici</p>
         <p id='homepage-app'>App</p>
         <canvas id="homepage-canvas" width="578" height="200"></canvas>
@@ -27,13 +32,15 @@
 
       <!-- 2. QUESTIONS SCREEN -->
       <div class="screen" id="questions-screen">
-        <button
-          id="submit-questions"
-          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
-          class="nav-button"
-          data-next-screen="circles-screen"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button>
+        <div class="nextContainer" id="submit-questions">
+          <button
+            class="nav-button nextButton"
+            data-next-screen="circles-screen"
+            data-animate-out="slideOutUp"
+            data-animate-in="slideInUp">NEXT</button>
+          <div id='trapezoid'></div>
+          <div id='trapezoidBorder'></div>
+        </div>
         <p id='activity-score-up'>+</p>
         <p id='activity-score-down'>-</p>
         <div id='questionBox'>
@@ -46,12 +53,15 @@
 
       <!-- 3. CIRCLES SCREEN -->
       <div class="screen" id="circles-screen">
-        <button
-          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
-          class="nav-button"
-          data-next-screen="results-screen"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button>
+        <div class="nextContainer">
+          <button
+            class="nav-button nextButton"
+            data-next-screen="results-screen"
+            data-animate-out="slideOutUp"
+            data-animate-in="slideInUp">NEXT</button>
+          <div id='trapezoid'></div>
+          <div id='trapezoidBorder'></div>
+        </div>
         <canvas id="circles" style="height: 100%; width: 100%; background-color: #faebd7"></canvas>
       </div>
 
