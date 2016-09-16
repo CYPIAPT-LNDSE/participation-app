@@ -6,7 +6,8 @@ import { scoreDown,
          moveToNextActivity,
          moveToPrevActivity,
          isCurrentFirstActivity,
-         isCurrentLastActivity } from './data-controls';
+         isCurrentLastActivity,
+         areActivitiesComplete } from './data-controls';
 
 const displayCurrentActivity = () => {
   document.querySelector('#display-activity').textContent =
@@ -18,10 +19,19 @@ export const updateScoreDisplay = () => {
   render(getCurrentActivity());
 };
 
+const updateSubmitButton = () => {
+  if (!areActivitiesComplete()) return;
+  document
+  .querySelector('#submit-questions')
+  .style
+  .display = 'inherit';
+};
+
 export const refreshUI = () => {
   updateButtons(getCurrentActivity().score);
   updateScoreDisplay();
   displayCurrentActivity();
+  updateSubmitButton();
 };
 
 const updateButtons = score => {

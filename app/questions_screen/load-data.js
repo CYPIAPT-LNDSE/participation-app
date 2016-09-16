@@ -1,10 +1,8 @@
-import {
-  DEFAULT_SCORE,
-  ACTIVITY_DATA } from './defaults';
+import { ACTIVITY_DATA } from './defaults';
 
 const generateData = () =>
   ({
-    items: ACTIVITY_DATA.map(activity => Object.assign({ score: DEFAULT_SCORE }, activity)),
+    items: ACTIVITY_DATA.map(activity => Object.assign({ score: null }, activity)),
     activeItem: 0
   });
 
