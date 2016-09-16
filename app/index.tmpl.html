@@ -10,13 +10,58 @@
   </head>
   <body>
     <div id="app" style="display: none">
-      <div class="screen" id="screen-1">
+
+      <!-- 1. HOMEPAGE SCREEN -->
+      <div class="screen" id="homepage-screen">
         <button
           style="position: absolute; top: 5px; left: 200px; z-index: 1000"
           class="nav-button"
-          data-next-screen="screen-2"
+          data-next-screen="questions-screen"
           data-animate-out="slideOutUp"
           data-animate-in="slideInUp">next</button>
+
+        <p id='logo'>Partici</p>
+        <p id='homepage-app'>App</p>
+        <canvas id="homepage-canvas" width="578" height="200"></canvas>
+      </div>
+
+      <!-- 2. QUESTIONS SCREEN -->
+      <div class="screen" id="questions-screen">
+        <button
+          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
+          class="nav-button"
+          data-next-screen="circles-screen"
+          data-animate-out="slideOutUp"
+          data-animate-in="slideInUp">next</button>
+        <p id='activity-score-up'>+</p>
+        <p id='activity-score-down'>-</p>
+        <div id='questionBox'>
+          <p id='display-activity'></p>
+        </div>
+        <img id="rightArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
+        <img id="leftArrow" src="http://cliparts.co/cliparts/Lcd/544/Lcd544nni.png" alt="arrow" />
+        <canvas id="ballCanvas"></canvas>
+      </div>
+
+      <!-- 3. CIRCLES SCREEN -->
+      <div class="screen" id="circles-screen">
+        <button
+          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
+          class="nav-button"
+          data-next-screen="results-screen"
+          data-animate-out="slideOutUp"
+          data-animate-in="slideInUp">next</button>
+        <canvas id="circles" style="height: 100%; width: 100%; background-color: #faebd7"></canvas>
+      </div>
+
+      <!-- 4. RESULTS SCREEN -->
+      <div class="screen" id="results-screen">
+        <button
+          style="position: absolute; top: 5px; left: 200px; z-index: 1000"
+          class="nav-button"
+          data-next-screen="circles-screen"
+          data-animate-out="slideOutDown"
+          data-animate-in="slideInDown">prev</button>
         <div id='text' class='plain-text'></div>
         <div id="arrow-right"></div>
         <div id="container">
@@ -32,40 +77,6 @@
             </ul>
         </div>
       </div>
-      <div class="screen stuff" id="screen-2">
-        <canvas id="circles" style="height: 100%; width: 100%; background-color: #faebd7"></canvas>
-        <!-- <button
-          class="nav-button"
-          data-next-screen="screen-1"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
-        <button
-          class="nav-button"
-          data-next-screen="screen-3"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button> -->
-      </div>
-      <div class="screen stuff" id="screen-3">
-        Screen 3
-        <button
-          class="nav-button"
-          data-next-screen="screen-2"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
-        <button
-          class="nav-button"
-          data-next-screen="screen-4"
-          data-animate-out="slideOutUp"
-          data-animate-in="slideInUp">next</button>
-      </div>
-      <div class="screen stuff" id="screen-4">
-        <!-- Screen 4 -->
-        <button
-          class="nav-button"
-          data-next-screen="screen-3"
-          data-animate-out="slideOutDown"
-          data-animate-in="slideInDown">prev</button>
-      </div>
     </div>
   </body>
-</html>
+</html> 

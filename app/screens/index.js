@@ -1,17 +1,11 @@
-export { addScreenStyles } from './css_manipulations';
-import { swapScreens } from './transitions';
-import { getScreenRefsFromNode } from './dom_search';
+import { addScreenStyles } from './css_manipulations';
+import { enableNavLinks } from './enable_navlinks';
+import { showFirstScreen } from './show_first_screen';
 
-// type ButtonClickOpts = {button: Node, crntScreen: Node, nextScreen: Node, animOutType: String}
+const initScreens = (screenHooks, firstScreenName) => {
+  addScreenStyles();
+  showFirstScreen(screenHooks, firstScreenName);
+  enableNavLinks(screenHooks);
+};
 
-// addNavButtonClickHandler :: ButtonClickOpts -> ScreenHooks -> void
-const addNavButtonClickHandler = screenHooks => opts =>
-  opts.node
-  .addEventListener('click', swapScreens.bind(null, opts, screenHooks));
-
-// enableNavLinks :: ScreenHooks -> void
-export const enableNavLinks = (screenHooks) =>
-  Array
-  .from(document.querySelectorAll('[data-next-screen]'))
-  .map(getScreenRefsFromNode)
-  .forEach(addNavButtonClickHandler(screenHooks));
+export default initScreens;

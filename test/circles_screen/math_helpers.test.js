@@ -1,12 +1,18 @@
 import test from 'ava';
-import { add, vector2Add, vector2Subtract, magnitude, vector2Theta, cartesian2ToPolar, polar2ToCartesian } from '../app/math_helpers.js'
+import { add,
+         vector2Add,
+         vector2Subtract,
+         magnitude,
+         vector2Theta,
+         cartesian2ToPolar,
+         polar2ToCartesian } from '../../app/circles_screen/math_helpers';
 
-function threedpAcc(x) {
+function threedpAcc (x) {
   if (typeof x === 'object') {
-    return x.map((el) => {  return el.toFixed(3) });
-  };
+    return x.map((el) => { return el.toFixed(3); });
+  }
   return x.toFixed(3);
-};
+}
 
 test('adds two numbers', t => {
   t.is(add(1, 2), 3);
@@ -34,6 +40,5 @@ test('converts cartesian vector to polar vector', t => {
 
 test('converts polar vector to cartesian vector', t => {
   t.deepEqual(threedpAcc(polar2ToCartesian([5, 0])), threedpAcc([5, 0]));
-  t.deepEqual(threedpAcc(polar2ToCartesian([magnitude([4, 4]) , Math.PI / 4])), threedpAcc([4, 4]));
+  t.deepEqual(threedpAcc(polar2ToCartesian([magnitude([4, 4]), Math.PI / 4])), threedpAcc([4, 4]));
 });
-

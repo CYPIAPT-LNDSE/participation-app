@@ -86,7 +86,7 @@ let stop = () => { cancelAnimationFrame(start); };
 const onLoad = (containerNode) => {
   c.width = window.innerWidth;
   c.height = window.innerHeight;
-  const questions = JSON.parse(window.localStorage.getItem('activeData'));
+  const questions = JSON.parse(window.localStorage.getItem('activityData')).items;
   displayCircles(questions, { width: c.width, height: c.height });
   start();
 };
