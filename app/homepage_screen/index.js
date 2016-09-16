@@ -21,10 +21,10 @@ function animate (canvas) {
   context.scale(widthScale, heightScale);
   context.arc(0, 0, 65, 0, 2 * Math.PI, false);
   context.restore();
-  context.fillStyle = '#8ED6FF';
+  context.fillStyle = '#63D1F4';
   context.fill();
   context.lineWidth = 2;
-  context.strokeStyle = '#555';
+  context.strokeStyle = '#1e252f';
   context.stroke();
   context.beginPath();
   context.save();

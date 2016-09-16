@@ -1,4 +1,3 @@
-
 import { findCollisionWithOtherCircles, detectBoundaryCollision } from './collision.js';
 import { vector2Add } from './math_helpers.js';
 

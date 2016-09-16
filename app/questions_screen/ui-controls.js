@@ -11,7 +11,7 @@ import { scoreDown,
 
 const displayCurrentActivity = () => {
   document.querySelector('#display-activity').textContent =
-    getCurrentActivity().description;
+  getCurrentActivity().description;
 };
 
 export const updateScoreDisplay = () => {
@@ -73,17 +73,17 @@ const enablePrevButton = () =>
 
 const enableScoreDownButton = () =>
   document.querySelector('#activity-score-down')
-    .addEventListener('click', () => {
-      scoreDown();
-      refreshUI();
-    });
+  .addEventListener('click', () => {
+    scoreDown();
+    refreshUI();
+  });
 
 const enableScoreUpButton = () =>
   document.querySelector('#activity-score-up')
-    .addEventListener('click', () => {
-      scoreUp();
-      refreshUI();
-    });
+  .addEventListener('click', () => {
+    scoreUp();
+    refreshUI();
+  });
 
 export const enableUI = () => {
   enableScoreUpButton();
