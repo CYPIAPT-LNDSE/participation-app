@@ -4,7 +4,7 @@ import { vector2Add } from './math_helpers.js';
 
 function calculateRadius (score, screenDimensions) {
   const pixels = screenDimensions.width * screenDimensions.height;
-  return Math.round(score * (Math.sqrt(pixels / 20) / 2) / 5);
+  return Math.round(score * (Math.sqrt(pixels / 11) / 2) / 5);
 }
 
 function nextPixel ([x, y], xMax, yMin) {
