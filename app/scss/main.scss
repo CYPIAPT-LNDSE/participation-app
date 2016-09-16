@@ -12,6 +12,7 @@ html, body {
   background-color: #FAEBD7;
   left: 0;
   position: absolute;
+  overflow:scroll;
 }
 
 #container {
@@ -98,7 +99,7 @@ li {
   min-height: 100%;
     height: auto !important;
     height: 100%;
-  overflow-y: scroll;
+overflow:scroll;
   // overflow: hidden;
 }
 
@@ -112,6 +113,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
+  overflow:scroll;
 }
 
 // #screen-1 {
