@@ -1,4 +1,5 @@
 import Hammer from 'hammerjs';
+import { getRating } from './get_rating';
 
 const paneSize = 220;
 const zDepth = paneSize / (2 * Math.tan(Math.PI / 8));
@@ -137,6 +138,7 @@ function panOff () {
 
 function onLoad () {
   addPan();
+  console.log('Your rating is: ', getRating());
 }
 
 function onUnload () {
